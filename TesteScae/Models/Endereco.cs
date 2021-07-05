@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 namespace TesteScae.Models {
     public class Endereco {
 
-        [Key]
+      
         public int Id { get; private set; }
         
+        public string Cep { get; set; }
         public string Rua { get; set; }
         
         public string Bairro { get; set; }
@@ -18,12 +19,14 @@ namespace TesteScae.Models {
         
         public string Estado { get; set; }
 
+        public List<Cliente> Clientes { get; private set; } = new List<Cliente>();
 
-        public Endereco(string rua, string bairro, string cidade, string estado){
+        /*public Endereco(string rua, string bairro, string cidade, string estado, string cep){
             this.Rua = rua;
             this.Bairro =bairro;
             this.Cidade =cidade;
             this.Estado = estado;
-        }
+            this.Cep = cep;
+        }*/
     }
 }

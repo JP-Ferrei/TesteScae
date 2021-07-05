@@ -79,21 +79,7 @@ namespace TesteScae.Controllers
         public async Task<ActionResult<Cliente>> PostCliente(Cliente cliente)
         {
             _context.Clientes.Add(cliente);
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (ClienteExists(cliente.Id))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetCliente", new { id = cliente.Id }, cliente);
         }

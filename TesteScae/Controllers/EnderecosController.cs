@@ -12,23 +12,23 @@ namespace TesteScae.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EnderecoesController : ControllerBase
+    public class EnderecosController : ControllerBase
     {
         private readonly DataContext _context;
 
-        public EnderecoesController(DataContext context)
+        public EnderecosController(DataContext context)
         {
             _context = context;
         }
 
-        // GET: api/Enderecoes
+        // GET: api/Enderecos
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Endereco>>> GetEnderecos()
         {
             return await _context.Enderecos.ToListAsync();
         }
 
-        // GET: api/Enderecoes/5
+        // GET: api/Enderecos/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Endereco>> GetEndereco(int id)
         {
@@ -42,7 +42,7 @@ namespace TesteScae.Controllers
             return endereco;
         }
 
-        // PUT: api/Enderecoes/5
+        // PUT: api/Enderecos/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutEndereco(int id, Endereco endereco)
@@ -73,7 +73,7 @@ namespace TesteScae.Controllers
             return NoContent();
         }
 
-        // POST: api/Enderecoes
+        // POST: api/Enderecos
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Endereco>> PostEndereco(Endereco endereco)
@@ -84,7 +84,7 @@ namespace TesteScae.Controllers
             return CreatedAtAction("GetEndereco", new { id = endereco.Id }, endereco);
         }
 
-        // DELETE: api/Enderecoes/5
+        // DELETE: api/Enderecos/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteEndereco(int id)
         {

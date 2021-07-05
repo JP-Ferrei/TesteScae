@@ -9,25 +9,27 @@ namespace TesteScae.Models {
     public class Cliente {
 
 
-        [Key]
         public int Id { get; private set; }
 
-        [Required]
         public string Nome { get; set; }
 
-        [Required]
         public string Cpf { get; set; }
+        public string Celular { get; set; }
+        public string DataNascimento { get; set; }
 
-        [ForeignKey("EnderecoId")]
-        public int EnderecoId { get; private set; }
+        public string EnderecoCep { get; set; }
 
-               
+       
 
-        public Cliente(int id, string nome, string cpf) {
-            Id = id;
+
+
+
+        /*public Cliente(int id, string nome, string cpf, string enderecoCep) {
+            Id = id; 
             Nome = nome;
             Cpf = cpf;
+            this.EnderecoCep = enderecoCep;
            
-        }
+        }*/
     }
 }
